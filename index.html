@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Birthday Flow</title>
+  <title>Birthday Surprise</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
       text-align: center;
-      padding: 50px;
       background-color: #fff0f5;
+      font-family: sans-serif;
+      padding: 30px;
     }
     .section {
       display: none;
@@ -16,96 +16,78 @@
     .active {
       display: block;
     }
-    button {
-      margin: 10px;
-      padding: 10px 20px;
-      font-size: 16px;
+    img.button {
       cursor: pointer;
-      border-radius: 10px;
-      border: none;
-      background-color: #ff69b4;
-      color: white;
-      transition: background 0.3s;
-    }
-    button:hover {
-      background-color: #ff1493;
-    }
-    img {
-      max-width: 300px;
+      width: 150px;
       margin-top: 20px;
     }
+    img.content {
+      max-width: 90%;
+    }
     audio {
-      position: fixed;
-      bottom: 10px;
-      left: 50%;
-      transform: translateX(-50%);
+      display: none;
     }
   </style>
 </head>
 <body>
 
+  <!-- Musik dari GitHub -->
+  <audio id="birthdayMusic" src="https://raw.githubusercontent.com/username/repo/main/music.mp3" preload="auto" autoplay loop></audio>
+
   <!-- Halaman 1 -->
   <div id="page1" class="section active">
-    <h1>Happy Birthday</h1>
-    <button onclick="goToPage('page2')">Click</button>
+    <img class="content" src="https://raw.githubusercontent.com/username/repo/main/happy-birthday.png" alt="Happy Birthday">
+    <br>
+    <img class="button" src="https://raw.githubusercontent.com/username/repo/main/click-button.png" alt="Click" onclick="goToPage('page2')">
   </div>
 
   <!-- Halaman 2 -->
   <div id="page2" class="section">
-    <h2>Pilih</h2>
-    <button onclick="goToPage('noPage')">No</button>
-    <button onclick="goToPage('yesPage')">Yes</button>
+    <img class="content" src="https://raw.githubusercontent.com/username/repo/main/pilih.png" alt="Pilih">
+    <br>
+    <img class="button" src="https://raw.githubusercontent.com/username/repo/main/no-button.png" alt="No" onclick="goToPage('noPage')">
+    <img class="button" src="https://raw.githubusercontent.com/username/repo/main/yes-button.png" alt="Yes" onclick="goToPage('yesPage')">
   </div>
 
   <!-- Halaman No -->
   <div id="noPage" class="section">
-    <h2>Try Again</h2>
-    <button onclick="goToPage('page1')">OK</button>
+    <img class="content" src="https://raw.githubusercontent.com/username/repo/main/try-again.png" alt="Try Again">
+    <br>
+    <img class="button" src="https://raw.githubusercontent.com/username/repo/main/ok-button.png" alt="OK" onclick="goToPage('page1')">
   </div>
 
   <!-- Halaman Yes -->
   <div id="yesPage" class="section">
-    <h2>This is for u</h2>
-    <button onclick="goToPage('letterPage')">Letter</button>
-    <p>or</p>
-    <button onclick="goToPage('sandwichPage')">Sandwich</button>
+    <img class="content" src="https://raw.githubusercontent.com/username/repo/main/this-is-for-u.png" alt="This is for u">
+    <br>
+    <img class="button" src="https://raw.githubusercontent.com/username/repo/main/letter-button.png" alt="Letter" onclick="goToPage('letterPage')">
+    <br>
+    <img class="content" src="https://raw.githubusercontent.com/username/repo/main/or.png" alt="or">
+    <br>
+    <img class="button" src="https://raw.githubusercontent.com/username/repo/main/sandwich-button.png" alt="Sandwich" onclick="goToPage('sandwichPage')">
   </div>
 
   <!-- Halaman Letter -->
   <div id="letterPage" class="section">
-    <h2>Surat Untukmu 💌</h2>
-    <img src="https://via.placeholder.com/300x200?text=Letter+Image" alt="Letter">
+    <img class="content" src="https://raw.githubusercontent.com/username/repo/main/letter-image.png" alt="Letter">
   </div>
 
   <!-- Halaman Sandwich -->
   <div id="sandwichPage" class="section">
-    <h2>Sandwich Spesial 🥪</h2>
-    <img src="https://via.placeholder.com/300x200?text=Sandwich+Image" alt="Sandwich">
+    <img class="content" src="https://raw.githubusercontent.com/username/repo/main/sandwich-image.png" alt="Sandwich">
   </div>
-
-  <!-- Musik -->
-  <audio id="bgMusic" autoplay loop controls>
-    <source src="HBD SVT.mp3" type="audio/mp3">
-    Your browser does not support the audio element.
-  </audio>
 
   <script>
     function goToPage(pageId) {
-      // Sembunyikan semua section
-      const sections = document.querySelectorAll('.section');
-      sections.forEach(sec => sec.classList.remove('active'));
-
-      // Tampilkan yang dipilih
+      document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
       document.getElementById(pageId).classList.add('active');
     }
 
-    // Autoplay workaround untuk iOS/Chrome
+    // Autoplay trigger
     window.addEventListener('click', function playMusicOnce() {
-      const music = document.getElementById('bgMusic');
-      music.play();
+      document.getElementById('birthdayMusic').play();
       window.removeEventListener('click', playMusicOnce);
     });
   </script>
-
 </body>
 </html>
