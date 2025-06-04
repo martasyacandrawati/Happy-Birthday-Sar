@@ -5,11 +5,15 @@
   <title>Birthday Surprise</title>
   <style>
     body {
-      text-align: center;
-      background-color: #fff0f5;
-      font-family: sans-serif;
-      padding: 30px;
-    }
+  text-align: center;
+  background-image: url('BG 1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: sans-serif;
+  padding: 30px;
+  min-height: 100vh;
+}
     .section {
       display: none;
     }
@@ -32,18 +36,18 @@
 <body>
 
   <!-- Musik dari GitHub -->
-  <audio id="birthdayMusic" src="https://raw.githubusercontent.com/username/repo/main/music.mp3" preload="auto" autoplay loop></audio>
+  <audio id="birthdayMusic" src="HBD SVT.mp3" preload="auto" autoplay loop></audio>
 
   <!-- Halaman 1 -->
   <div id="page1" class="section active">
-    <img class="content" src="https://raw.githubusercontent.com/username/repo/main/happy-birthday.png" alt="Happy Birthday">
+    <img class="content" src="HBD FIX.png" alt="Happy Birthday">
     <br>
     <img class="button" src="https://raw.githubusercontent.com/username/repo/main/click-button.png" alt="Click" onclick="goToPage('page2')">
   </div>
 
   <!-- Halaman 2 -->
   <div id="page2" class="section">
-    <img class="content" src="https://raw.githubusercontent.com/username/repo/main/pilih.png" alt="Pilih">
+    <img class="content" src="LETTER C FIX.png" alt="Pilih">
     <br>
     <img class="button" src="https://raw.githubusercontent.com/username/repo/main/no-button.png" alt="No" onclick="goToPage('noPage')">
     <img class="button" src="https://raw.githubusercontent.com/username/repo/main/yes-button.png" alt="Yes" onclick="goToPage('yesPage')">
@@ -58,13 +62,13 @@
 
   <!-- Halaman Yes -->
   <div id="yesPage" class="section">
-    <img class="content" src="https://raw.githubusercontent.com/username/repo/main/this-is-for-u.png" alt="This is for u">
+    <img class="content" src="CHOOSE ONE FIX.png" alt="This is for u">
     <br>
-    <img class="button" src="https://raw.githubusercontent.com/username/repo/main/letter-button.png" alt="Letter" onclick="goToPage('letterPage')">
+    <img class="button" src="LETTER O FIX.png" alt="Letter" onclick="goToPage('letterPage')">
     <br>
-    <img class="content" src="https://raw.githubusercontent.com/username/repo/main/or.png" alt="or">
+    <img class="content" src="OR FIX.png" alt="or">
     <br>
-    <img class="button" src="https://raw.githubusercontent.com/username/repo/main/sandwich-button.png" alt="Sandwich" onclick="goToPage('sandwichPage')">
+    <img class="button" src="SANDWICH FIX.png" alt="Sandwich" onclick="goToPage('sandwichPage')">
   </div>
 
   <!-- Halaman Letter -->
